@@ -1,28 +1,27 @@
 <template>
-  <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+  <div id="app" class="bg-lightblue font-serif flex flex-col min-h-screen text-blue">
+  <header class="bg-gold h-24 text-center p-6 text-blue font-extrabold text-4xl"> 
+  <h1>BELOW DECK SOUNDS</h1> 
+  </header>
+    <div id="body" class="flex-grow pt-32 pb-32"> 
+    <Board />
+    </div>
+    <footer class="text-uderline bg-gold h-32 text-center p-8 text-blue font-extrabold text-4xl">
+    <button   class="underline background-transparent font-bold px-3 py-1 outline-none focus:outline-none mr-1 mb-1" type="button" style="transition: all .15s ease">
+  <a href="https://woodj22.github.io/#/">Made by Me </a>
+</button>
+    </footer>
   </div>
+  
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import Board from './components/Board.vue'
 
 export default {
   name: 'App',
   components: {
-    HelloWorld
+    Board
   }
 }
 </script>
-
-<style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
-</style>

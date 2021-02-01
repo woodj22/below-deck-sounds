@@ -22,3 +22,9 @@ npm run lint
 
 ### Customize configuration
 See [Configuration Reference](https://cli.vuejs.org/config/).
+
+### Ivalidate the Cloudfront cache
+
+```
+aws cloudfront create-invalidation --distribution-id E1O7MIBF2488UR --paths "/*"
+```
