@@ -1,22 +1,37 @@
 <template>
   <div class="board" >
         <div class="grid grid-cols-4 max-w-screen-lg mx-auto">
-        <t-button  :key="sound.id" v-for="sound in this.sounds" @click.prevent="playSound(sound.url)">
-         {{ sound.quote }} </t-button>
+        <button @myEvent="endSound" :class="{'border-4 border-tan': playingAudios.includes(index)}" :key="index" v-for="(sound, index) in sounds" @click="playSound(sound.url, index)">
+         {{ sound.quote }} </button>
         </div>
+        <div @my-event="endSound"></div>
   </div>
 </template>
 <script>
 
-
 export default {
   name: 'Board',
-
+  data: () => {
+    return {
+      playingAudios: []
+    }
+  },
   methods: {
-    playSound:  (sound) => {
+    playSound(sound, index) {
       if(sound) {
-          const id = require('../assets/sounds/'.concat(sound))
-        var audio = new Audio(id);
+        const src = require('../assets/sounds/'.concat(sound))
+        var audio = new Audio(src);
+          if (!this.playingAudios.includes(index)) {
+              this.playingAudios.push(index)
+        }
+        audio.addEventListener('ended', (index) =>  { 
+            this.playingAudios = this.playingAudios.filter(function(item) {
+            return item != index.currentTarget.id
+            })
+            console.log(this.playingAudios)
+        }, false)
+
+        audio.id = index
         audio.play();
         
       }
@@ -24,7 +39,7 @@ export default {
   },
   props: {
     msg: String,
-     sounds: {
+    sounds: {
       default: () => [{
         id: 1,
         url: "lee_pissed_on_chicken.mp3",
