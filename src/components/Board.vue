@@ -2,11 +2,10 @@
   <div class="board" >
         <div class="grid grid-cols-4">
         <div :key="index"  class="p-1 md:m-3 h-32 bg-mintpinch flex rounded-xl" v-for="(sound, index) in sounds">
-                <button class="t-button" @myEvent="endSound" :class="{'border-4 border-wetsand': playingAudios.includes(index)}" :key="index"  @click="playSound(sound.url, index)">
+                <button class="t-button" @myEvent="endSound" :class="{'border-4 border-wetsand': sound.url in audioList}" :key="index"  @click="playSound(sound.url)">
          {{ sound.quote }} </button>
          </div>
         </div>
-        <div @my-event="endSound"></div>
   </div>
 </template>
 <script>
@@ -17,26 +16,29 @@ export default {
   data: () => {
     return {
       sounds: SOUNDS,
-      playingAudios: []
+      audioList: {}
     }
   },
   methods: {
-    playSound(sound, index) {
+    playSound(sound) {
       if(sound) {
         const src = require('../assets/sounds/'.concat(sound))
         var audio = new Audio(src);
-          if (!this.playingAudios.includes(index)) {
-              this.playingAudios.push(index)
+
+        if (sound in this.audioList) {
+          const oldSound = this.audioList[sound] 
+          delete this.audioList[sound]
+          oldSound.pause()
+          // Remove return statement if you want a second button click to start sound from beginning
+          return 
         }
         audio.addEventListener('ended', (index) =>  { 
-            this.playingAudios = this.playingAudios.filter(function(item) {
-            return item != index.currentTarget.id
-            })
+            delete this.audioList[index.currentTarget.source]
         }, false)
-
-        audio.id = index
-        audio.play();
         
+        this.audioList[sound] = audio
+        audio.source = sound
+        audio.play();
       }
     }
   }
