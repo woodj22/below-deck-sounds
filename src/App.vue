@@ -4,7 +4,7 @@
   <h1>BELOW DECK SOUNDS</h1> 
   <p class="text-lg">Calling all yachties....</p>
   </header>
-    <div id="body" class="flex-grow md:p-32"> 
+    <div id="body" class="flex-grow md:p-32 pt-24"> 
     <Board />
     </div>
     <footer class="text-uderline bg-sand h-auto text-center p-3 text-blue font-extrabold text-2xl md:text-4xl border-t-8 border-mintpinch">
