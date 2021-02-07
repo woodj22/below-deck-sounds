@@ -26,13 +26,12 @@ See [Configuration Reference](https://cli.vuejs.org/config/).
 ### Deployment
  run : 
  ```
- npm run build
  npm run deploy
  ```
- and then invalidate the cloudfront cache
+ This will build the vue project, upload to s3 and then invlidate the cloudfront cache.
 
 ### Ivalidate the Cloudfront cache
 
 ```
-aws cloudfront create-invalidation --distribution-id E1O7MIBF2488UR --paths "/*"
+aws cloudfront create-invalidation --distribution-id E1O7MIBF2488UR --paths "/*" --profile=joewood
 ```
