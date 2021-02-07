@@ -1,8 +1,10 @@
 <template>
   <div class="board" >
-        <div class="grid grid-cols-4 max-w-screen-lg mx-auto">
-        <button @myEvent="endSound" :class="{'border-4 border-tan': playingAudios.includes(index)}" :key="index" v-for="(sound, index) in sounds" @click="playSound(sound.url, index)">
+        <div class="grid grid-cols-4">
+        <div :key="index"  class="p-1 md:m-3 h-32 bg-mintpinch flex rounded-xl" v-for="(sound, index) in sounds">
+                <button class="t-button" @myEvent="endSound" :class="{'border-4 border-wetsand': playingAudios.includes(index)}" :key="index"  @click="playSound(sound.url, index)">
          {{ sound.quote }} </button>
+         </div>
         </div>
         <div @my-event="endSound"></div>
   </div>
@@ -28,7 +30,6 @@ export default {
             this.playingAudios = this.playingAudios.filter(function(item) {
             return item != index.currentTarget.id
             })
-            console.log(this.playingAudios)
         }, false)
 
         audio.id = index
@@ -54,7 +55,7 @@ export default {
         series: "",
         episode: "",
         person: "captain lee",
-        quote: "get out of my way"
+        quote: "get out of the way"
     },
      {
         id: 3,
@@ -121,19 +122,5 @@ export default {
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
 
-h3 {
-  margin: 40px 0 0;
-}
-ul {
-  list-style-type: none;
-  padding: 0;
-}
-li {
-  display: inline-block;
-  margin: 0 10px;
-}
-a {
-  color: #42b983;
 
-}
 </style>

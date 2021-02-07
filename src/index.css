@@ -3,7 +3,7 @@
 @tailwind utilities;
 
 @layer base {
-    button {
-        @apply p-1 m-3 h-32 bg-gold focus:outline-none focus:ring-2 focus:ring-moondist focus:ring-opacity-50 rounded-xl shadow-md font-extrabold text-2xl;
+    .t-button {
+        @apply w-screen bg-sand border-4 border-moondist border-opacity-60 focus:outline-none focus:ring-2 focus:ring-moondist focus:ring-opacity-50 rounded-xl shadow-md font-extrabold md:text-2xl;
     }
 }
