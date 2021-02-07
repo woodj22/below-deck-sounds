@@ -10,11 +10,13 @@
   </div>
 </template>
 <script>
+import { SOUNDS } from '../assets/sound_manifest.js';
 
 export default {
   name: 'Board',
   data: () => {
     return {
+      sounds: SOUNDS,
       playingAudios: []
     }
   },
@@ -37,84 +39,6 @@ export default {
         
       }
     }
-  },
-  props: {
-    msg: String,
-    sounds: {
-      default: () => [{
-        id: 1,
-        url: "lee_pissed_on_chicken.mp3",
-        series: 1,
-        episode: 4,
-        person: "captain lee",
-        quote: "pissed on chicken"
-    },
-    {
-        id: 2,
-        url: "lee_get_out_of_way.mp3",
-        series: "",
-        episode: "",
-        person: "captain lee",
-        quote: "get out of the way"
-    },
-     {
-        id: 3,
-        url: "lee_screwed_the_pooch.mp3",
-        series: "",
-        episode: "",
-        person: "captain lee",
-        quote: "screwed the pooch"
-    },
-     {
-        id: 4,
-        url: "lee_ha_no.mp3",
-        series: "",
-        episode: "",
-        person: "captain lee",
-        quote: "haha no"
-    },
-     {
-        id: 5,
-        url: "lee_god_dam_it.mp3",
-        series: "",
-        episode: "",
-        person: "captain lee",
-        quote: "god dam it"
-    },
-    {
-        id: 6,
-        url: "kate_rocket_ship.mp3",
-        series: "",
-        episode: "",
-        person: "chief steward kate",
-        quote: "it's a rocket ship"
-    },
-     {
-        id: 7,
-        url: "ben_laugh.mp3",
-        series: "",
-        episode: "",
-        person: "chef ben",
-        quote: "ben's laugh"
-    },
-    {
-        id: 8,
-        url: "kate_rage_genius.mp3",
-        series: "",
-        episode: "",
-        person: "chief steward kate",
-        quote: "rage genius"
-    },
-     {
-        id: 9,
-        url: "kate_i_am_times_new_roman.mp3",
-        series: "",
-        episode: "",
-        person: "chief steward kate",
-        quote: "I am times new roman"
-    }
-    ]
-     }
   }
 }
 </script>

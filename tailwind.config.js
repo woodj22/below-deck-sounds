@@ -5,14 +5,11 @@ module.exports = {
   theme: {
     colors: {
       sand: "#face82",
-      blue: "#222130",
+      blue: "#032f66",
       wetsand: "#debe87",
       lightblue: "#35D0C7",
       mintpinch: "#ADEDCC",
       moondist:"#FFF8EC",
-    },
-    border: {
-      blue: ['2px solid #222130', '1px'],
     }
   },
   variants: {

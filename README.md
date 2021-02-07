@@ -23,6 +23,14 @@ npm run lint
 ### Customize configuration
 See [Configuration Reference](https://cli.vuejs.org/config/).
 
+### Deployment
+ run : 
+ ```
+ npm run build
+ npm run deploy
+ ```
+ and then invalidate the cloudfront cache
+
 ### Ivalidate the Cloudfront cache
 
 ```
