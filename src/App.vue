@@ -3,6 +3,7 @@
   <header class="bg-sand h-auto text-center p-6 text-blue font-extrabold text-2xl md:text-4xl border-b-8 border-mintpinch"> 
   <h1>BELOW DECK SOUNDS</h1> 
   <p class="text-lg">Calling all yachties....</p>
+  <p class="text-sm">Press one of the islands below to play sounds</p>
   </header>
     <div id="body" class="flex-grow md:p-32 pt-24"> 
     <Board />

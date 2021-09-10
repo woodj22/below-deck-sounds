@@ -1,7 +1,7 @@
 <template>
   <div class="board" >
         <div class="grid grid-cols-4">
-        <div :key="index"  class="p-1 md:m-3 h-32 bg-mintpinch flex rounded-xl" v-for="(sound, index) in sounds">
+        <div :key="index"  class="p-1 md:m-3 h-32 bg-mintpinch shadow-xl flex rounded-xl" v-for="(sound, index) in sounds">
                 <button class="t-button" @myEvent="endSound" :class="{'border-4 border-wetsand': sound.url in audioList}" :key="index"  @click="playSound(sound.url)">
          {{ sound.quote }} </button>
          </div>
